@@ -2,6 +2,7 @@
 
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:ebook_app/data/authors.dart';
+import 'package:ebook_app/pages/author/detail.dart';
 import 'package:ebook_app/pages/author/list.dart';
 import 'package:ebook_app/utilities/scaler.dart';
 import 'package:flutter/material.dart';
@@ -27,14 +28,14 @@ class _AuthorCarouselState extends State<AuthorCarousel> {
           child: InkWell(
             hoverColor: Theme.of(context).colorScheme.background,
             onTap: () {
-              // Navigator.push(
-              //   context,
-              //   MaterialPageRoute(
-              //     builder: (context) => DetailPage(
-              //       id: item.id,
-              //     ),
-              //   ),
-              // );
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => AuthorDetailPage(
+                    id: item.id,
+                  ),
+                ),
+              );
             },
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
